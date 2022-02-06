@@ -26,7 +26,11 @@ class ResfeshablePictureCard extends HTMLElement {
     
     // console.log(hassObj.states[config.entity_picture]["attributes"][config.attribute])
     
-    let picture = config.static_picture;
+    if(Array.isArray(config.static_picture)){
+        let picture = config.static_picture;
+    }{
+        let picture = [config.static_picture];
+    }
     let title = config.title || ""
     
     let html = ""
@@ -38,7 +42,7 @@ class ResfeshablePictureCard extends HTMLElement {
     try{
         
         html += `
-        <img id="thePic" class="center thePic" src="${picture}"  ></img>
+        <img id="thePic" class="center thePic" src="${picture[0]}"  ></img>
         <br>
         `;
         const css = `
@@ -122,7 +126,13 @@ class ResfeshablePictureCard extends HTMLElement {
     
     
     let refreshFunc = function(){
-      var pictureUrl = config.static_picture
+      if(Array.isArray(config.static_picture)){
+        var listsize = config.static_picture
+        var randpos = Math.random * listsize
+        var pictureUrl = config.static_picture[randpos]
+      }else{
+        var pictureUrl = config.static_picture
+      }
       
       if(config.entity_picture){
        pictureUrl = hassObj.states[config.entity_picture]["attributes"][config.attribute]
