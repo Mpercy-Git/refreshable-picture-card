@@ -1,6 +1,6 @@
 
 var hassObj = null;
-class ResfeshablePictureCard extends HTMLElement {
+class ResfeshablePictureCardPlus extends HTMLElement {
 
   constructor() {
     super();
@@ -102,7 +102,7 @@ class ResfeshablePictureCard extends HTMLElement {
     
     } catch(err){
       console.log(err)
-      console.log('waiting for refreshable-picture-card to load');
+      console.log('waiting for refreshable-picture-card-plus to load');
     }
     
   }
@@ -165,4 +165,4 @@ class ResfeshablePictureCard extends HTMLElement {
 
 }
 
-customElements.define('refreshable-picture-card', ResfeshablePictureCard);
+customElements.define('refreshable-picture-card-plus', ResfeshablePictureCardPlus);
