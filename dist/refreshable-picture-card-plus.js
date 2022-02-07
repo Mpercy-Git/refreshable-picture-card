@@ -128,7 +128,7 @@ class ResfeshablePictureCardPlus extends HTMLElement {
     
     let refreshFunc = function(){
       if(Array.isArray(config.static_picture)){
-        var listsize = config.static_picture
+        var listsize = config.static_picture.length
         var randpos = Math.random * listsize
         var pictureUrl = config.static_picture[randpos]
       }else{
