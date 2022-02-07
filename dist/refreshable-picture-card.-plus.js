@@ -25,6 +25,7 @@ class ResfeshablePictureCardPlus extends HTMLElement {
     const config = this._config;
     
     // console.log(hassObj.states[config.entity_picture]["attributes"][config.attribute])
+    console.log(Array.isArray(config.static_picture))
     
     if(Array.isArray(config.static_picture)){
         let picture = config.static_picture;
